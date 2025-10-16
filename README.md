@@ -3,7 +3,7 @@
 **Data and codes for:**  
 *Globally unified analysis of riverine fish eDNA reveals common associations of multi-faceted biodiversity with drainage characteristics*
 
-DOI: to be updated
+**DOI:** to be updated
 
 ---
 
@@ -20,43 +20,31 @@ Freshwater biodiversity is declining at a pace that outstrips the capacity of ex
 ## Keywords
 riverine fish, eDNA metabarcoding, multi-faceted biodiversity, biodiversity-area relationship
 
-
 ---
 
 ## Software, Data, and Instructions for Use
-**Overview**
 
-This repository contains all data and R codes used in the global analysis of riverine fish eDNA.
-
-The complete workflow, including system setup, installation, and analysis steps, is described below.
-
+**Overview**  
+This repository contains all data and R codes used in the global analysis of riverine fish eDNA.  
+The complete workflow, including system setup, installation, and analysis steps, is described below.  
 Running the scripts in the listed order will reproduce the analyses and figures presented in the manuscript.
 
-**System Requirements: **
+**System Requirements**  
+- R (≥ 4.2.0)  
+- Standard desktop or laptop computer  
+- No GPU or non-standard hardware required
 
-R (≥ 4.2.0)
+**Use Guide**  
+Executing the scripts sequentially reproduces the full workflow and figures.  
+All required **R packages** and all **custom functions** are contained and loaded in `00_functions.R`.
 
-Standard desktop or laptop computer.
+**Run the scripts in this order to complete one full analysis:**
+1. `01_Modelling_alpha_HG.R` — Main alpha-diversity modeling  
+2. `02_Modelling_alpha_HG_downsampling.R` — Downsampling-based modeling  
+3. `02_Modelling_alpha_HG_reshuffle.R` — Reshuffling (randomization) analysis  
+4. `03_Modelling_alpha_HG_predict.R` — Generates prediction outputs  
+5. `Figure_*.R` — Generates main figures
 
-No GPU or non-standard hardware required.
-
-**Use Guide: **
-
-Executing the scripts sequentially reproduces the full workflow and figures. All required R packages and all custom functions are contained and loaded in 00_functions.R.
-
-Run the scripts in this order to complete one full analysis:
-
-  *01_Modelling_alpha_HG.R — Main alpha-diversity modeling.*
-  
-  *02_Modelling_alpha_HG_downsampling.R — Downsampling-based modeling.*
-  
-  *02_Modelling_alpha_HG_reshuffle.R — Reshuffling (randomization) analysis.*
-  
-  *03_Modelling_alpha_HG_predict.R — Generates prediction outputs.*
-  
-  *Figure_*.R – Generates main figures.*
-
-Notes: 
-  *Basic modeling + plotting: ~1–2 hours*
-  
-  *02_Modelling_alpha_HG_downsampling.R and 02_Modelling_alpha_HG_reshuffle.R can be set to 1000 iterations. This is computationally intensive and may take days to weeks, depending on your machine. For quick tests, lower the iteration count.*
+**Notes**
+- Basic modeling + plotting: ~1–2 hours  
+- `02_Modelling_alpha_HG_downsampling.R` and `02_Modelling_alpha_HG_reshuffle.R` can be set to **1000 iterations**. This is computationally intensive and may take **days to weeks**, depending on your machine. For quick tests, lower the iteration count.
